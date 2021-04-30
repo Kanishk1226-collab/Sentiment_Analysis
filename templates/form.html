@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style>
+@font-face {
+  font-family: Raleway-Black;
+  src: url('../fonts/raleway/Raleway-Black.ttf');
+}
+
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url('../fonts/raleway/Raleway-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Raleway-Bold;
+  src: url('../fonts/raleway/Raleway-Bold.ttf');
+}
+
+html {
+	background-image: url("https://media.istockphoto.com/photos/abstract-background-of-polygons-on-white-background-picture-id857482302?k=6&m=857482302&s=612x612&w=0&h=OuoF9jRqMadz9tf6-j028wxL84cotX_cyhdvZ4bE8_g=");
+}
+
+body {
+	font: 100% Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	position: relative;
+	background-image: url("https://media.istockphoto.com/photos/abstract-background-of-polygons-on-white-background-picture-id857482302?k=6&m=857482302&s=612x612&w=0&h=OuoF9jRqMadz9tf6-j028wxL84cotX_cyhdvZ4bE8_g=");
+	color: rgb(76, 67, 65);
+	font-weight:normal;
+	font-style:normal;
+
+    width: 1280px;
+	margin: 20 auto;
+    padding: 20px;
+}
+
+
+form, div{
+	border-bottom: 2px solid rgb(76, 67, 65);
+	margin-bottom: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em
+}
+
+h1 {
+	font-family: Raleway-Bold, sans-serif !important;
+	font-size: 1.8em;
+    padding-left: 15em;
+	border-bottom: 2px solid rgb(76, 67, 65);
+	margin-bottom: 1.5em;
+    color: white;
+	background-image: url("https://cdn.pixabay.com/photo/2020/08/31/18/14/abstract-5533222_1280.jpg");
+}
+
+h3 {
+font-family: Raleway-Bold, sans-serif !important;
+font-weight: lighter;
+
+background-image: url("https://cdn.pixabay.com/photo/2016/01/19/17/19/starry-night-1149644_1280.jpg");
+color : white;
+
+}
+
+.example_a {
+    border: none;
+    background: #404040;
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+
+    float: right;
+    margin-top: 2em;
+}
+
+.example_a:hover {
+    color: #404040 !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+
+   table {
+  max-width: 100%;
+}
+
+tr {
+  background-color: #eee;
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em 1em;
+}
+
+
+</style>
+
+
+
+<head>
+
+
+        <title>{{ title }} Sentiment Analysis</title>
+
+    </head>
+    <body>
+        <h1>Welcome To Sentiment Analyzer</h1>
+        <form method="POST">
+            <textarea name="text1" placeholder="Say Something: ...." rows="10" cols="109"></textarea><br><br>
+
+            <input class="example_a" type="submit">
+        </form>
+        {% if final %}
+        <div>
+            <h3>The Sentiment of '{{ text1 }}' is {{ final *100}}% positive !</h3>
+			<h2>Score table</h2>
+
+
+
+<table style="width:100%">
+  <tr>
+    <th>SENTIMENT METRIC</th>
+    <th>SCORE</th>
+  </tr>
+  <tr>
+    <td>Positive</td>
+    <td>{{text2}}</td>
+
+  </tr>
+  <tr>
+    <td>Neutral</td>
+    <td>{{text3}}</td>
+
+  </tr>
+  <tr>
+    <td>Negative</td>
+    <td>{{text5}}</td>
+
+  </tr>
+  <tr>
+    <td>Compound</td>
+    <td>{{text4}}</td>
+
+  </tr>
+</table>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+    </body>
+</html>
+
